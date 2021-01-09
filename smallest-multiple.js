@@ -5,19 +5,19 @@ console.log('verbose:', verbose);
 
 // Function finds the factorial of the provided number recursively.
 // i.e. 4! = 4 * 3 * 2 * 1
-function findFactorial(number) {
+function factorial(number) {
    if (verbose) {
-      console.log('findFactorial() -> number:', number);
+      console.log('factorial() -> number:', number);
    }
    // base case
    if (number === 0 || number === 1) {
       if (verbose) {
-         console.log('findFactorial() -> returned from if');
+         console.log('factorial() -> returned from if');
       }
       return 1;
    } else {
       if (verbose) {
-         console.log('findFactorial() -> returned from else');
+         console.log('factorial() -> returned from else');
       }
       return number * findFactorial(number - 1);
    }
@@ -26,11 +26,11 @@ function findFactorial(number) {
 /// same function found iteratively
 // Function finds the factorials of the provided number iteratively.
 // i.e. 4! = 4 * 3 * 2 * 1
-// function findFactorial(number) {
+// function factorial(number) {
 //    let answer = 1;
 //    if (verbose) {
-//       console.log('findFactorial() -> number:', number);
-//       console.log('findFactorial() -> answer:', answer);
+//       console.log('factorial() -> number:', number);
+//       console.log('factorial() -> answer:', answer);
 //    }
 //    // base case
 //    if (number === 0 || number === 1) {
@@ -39,12 +39,12 @@ function findFactorial(number) {
 //       for (let i = number; i > 1; i--) {
 //          answer *= i;
 //          if (verbose) {
-//             console.log('findFactorial() -> answer:', answer);
+//             console.log('factorial() -> answer:', answer);
 //          }
 //       }
 //    }
 //    if (verbose) {
-//       console.log('findFactorial() -> answer:', answer);
+//       console.log('factorial() -> answer:', answer);
 //    }
 //    return answer;
 // }
@@ -54,7 +54,7 @@ function findFactorial(number) {
 // maxMultipler-n divide evenly as well to find the smallest multiple of all
 // sequential numbers from 1 upto and including maxMultipler
 function smallestMultiple(maxMultipler) {
-   let maxMultiplierFactorial = findFactorial(maxMultipler);
+   let maxMultiplierFactorial = factorial(maxMultipler);
    let smallestMultiple = maxMultiplierFactorial;
    if (verbose) {
       console.log('smallestMultiple() -> maxMultipler:', maxMultipler);
