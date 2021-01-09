@@ -1,6 +1,6 @@
 console.log('Smallest Multiple');
 
-const verbose = true;
+const verbose = false;
 console.log('verbose:', verbose);
 
 // Function finds the factorial of the provided number recursively.
@@ -66,23 +66,25 @@ function smallestMultiple(maxMultipler) {
                console.log('smallestMultiple() ->', startingMultiple, '%', counter, '=== 0');
             }
          }
-         smallestMultiple = startingMultiple;
-         if (verbose) {
-            console.log('smallestMultiple() -> smallestMultiple:', smallestMultiple);
+         if (counter === 2) {
+            smallestMultiple = startingMultiple;
+            if (verbose) {
+               console.log('smallestMultiple() -> smallestMultiple:', smallestMultiple);
+            }
          }
       }
    }
-
-
    return smallestMultiple;
 }
 
-console.clear();
-console.log('smallestMultiple of 10!:', smallestMultiple(10));
 
 /// testing
-// console.log('*** findFactorial() Testing ***');
-// console.log('\tcalling findFactorial() on 2, should return 2:', findFactorial(2));
-// console.log('\tcalling findFactorial() on 3, should return 6:', findFactorial(3));
-// console.log('\tcalling findFactorial() on 10, should return 3628800:', findFactorial(10));
-// console.log('*** smallestMultiple() Testing ***');
+console.log('*** findFactorial() Testing ***');
+console.log('\tcalling findFactorial() on 2, should return 2:', findFactorial(2));
+console.log('\tcalling findFactorial() on 3, should return 6:', findFactorial(3));
+console.log('\tcalling findFactorial() on 10, should return 3628800:', findFactorial(10));
+console.log('*** smallestMultiple() Testing ***');
+console.log('\tcalling smallestMultiple() on 4, should return 12:', smallestMultiple(4));
+console.log('\tcalling smallestMultiple() on 5, should return 60:', smallestMultiple(5));
+console.log('\tcalling smallestMultiple() on 6, should return 60:', smallestMultiple(6));
+console.log('\tcalling smallestMultiple() on 10, should return 2520:', smallestMultiple(10));
