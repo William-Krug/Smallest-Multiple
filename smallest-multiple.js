@@ -26,28 +26,28 @@ function findFactorial(number) {
 /// same function found iteratively
 // Function finds the factorials of the provided number iteratively.
 // i.e. 4! = 4 * 3 * 2 * 1
-function findFactorial(number) {
-   let answer = 1;
-   if (verbose) {
-      console.log('findFactorial() -> number:', number);
-      console.log('findFactorial() -> answer:', answer);
-   }
-   // base case
-   if (number === 0 || number === 1) {
-      return answer;
-   } else {
-      for (let i = number; i > 1; i--) {
-         answer *= i;
-         if (verbose) {
-            console.log('findFactorial() -> answer:', answer);
-         }
-      }
-   }
-   if (verbose) {
-      console.log('findFactorial() -> answer:', answer);
-   }
-   return answer;
-}
+// function findFactorial(number) {
+//    let answer = 1;
+//    if (verbose) {
+//       console.log('findFactorial() -> number:', number);
+//       console.log('findFactorial() -> answer:', answer);
+//    }
+//    // base case
+//    if (number === 0 || number === 1) {
+//       return answer;
+//    } else {
+//       for (let i = number; i > 1; i--) {
+//          answer *= i;
+//          if (verbose) {
+//             console.log('findFactorial() -> answer:', answer);
+//          }
+//       }
+//    }
+//    if (verbose) {
+//       console.log('findFactorial() -> answer:', answer);
+//    }
+//    return answer;
+// }
 
 // Function starts at maxMultipler! and progressively checks smaller multiples
 // of the maxMultipler to see if maxMultipler-1, maxMultipler-2, ...
@@ -75,10 +75,9 @@ function smallestMultiple(maxMultipler) {
                console.log('smallestMultiple() -> starting next iteration of outer for loop');
             }
             break;
-         } else {
-            if (verbose) {
-               console.log('smallestMultiple() ->', startingMultiple, '%', counter, '=== 0');
-            }
+         }
+         if (verbose) {
+            console.log('smallestMultiple() ->', startingMultiple, '%', counter, '=== 0');
          }
          if (counter === 2) {
             smallestMultiple = startingMultiple;
@@ -91,11 +90,11 @@ function smallestMultiple(maxMultipler) {
    return smallestMultiple;
 }
 
-console.log();
-console.log();
-console.log('The smallest multiple of 20! is:', smallestMultiple(20));
-console.log();
-console.log();
+// console.log();
+// console.log();
+// console.log('The smallest multiple of 20! is:', smallestMultiple(20));
+// console.log();
+// console.log();
 
 /// testing
 console.log('*** findFactorial() Testing ***');
