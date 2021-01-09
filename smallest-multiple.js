@@ -26,19 +26,33 @@ function findFactorial(number) {
 /// same function found iteratively
 // Function finds the factorials of the provided number iteratively.
 // i.e. 4! = 4 * 3 * 2 * 1
-// function findFactorial(number) {
-//    let answer = 1;
-//    // base case
-//    if (number === 0 || number === 1) {
-//       return answer;
-//    } else {
-//       for (let i = number; i > 1; i--) {
-//          answer *= i;
-//       }
-//    }
-//    return answer;
-// }
+function findFactorial(number) {
+   let answer = 1;
+   if (verbose) {
+      console.log('findFactorial() -> number:', number);
+      console.log('findFactorial() -> answer:', answer);
+   }
+   // base case
+   if (number === 0 || number === 1) {
+      return answer;
+   } else {
+      for (let i = number; i > 1; i--) {
+         answer *= i;
+         if (verbose) {
+            console.log('findFactorial() -> answer:', answer);
+         }
+      }
+   }
+   if (verbose) {
+      console.log('findFactorial() -> answer:', answer);
+   }
+   return answer;
+}
 
+// Function starts at maxMultipler! and progressively checks smaller multiples
+// of the maxMultipler to see if maxMultipler-1, maxMultipler-2, ...
+// maxMultipler-n divide evenly as well to find the smallest multiple of all
+// sequential numbers from 1 upto and including maxMultipler
 function smallestMultiple(maxMultipler) {
    let maxMultiplierFactorial = findFactorial(maxMultipler);
    let smallestMultiple = maxMultiplierFactorial;
@@ -77,6 +91,11 @@ function smallestMultiple(maxMultipler) {
    return smallestMultiple;
 }
 
+console.log();
+console.log();
+console.log('The smallest multiple of 20! is:', smallestMultiple(20));
+console.log();
+console.log();
 
 /// testing
 console.log('*** findFactorial() Testing ***');
