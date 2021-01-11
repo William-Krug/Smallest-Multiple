@@ -19,7 +19,7 @@ function factorial(number) {
       if (verbose) {
          console.log('factorial() -> returned from else');
       }
-      return number * findFactorial(number - 1);
+      return number * factorial(number - 1);
    }
 }
 
@@ -77,6 +77,13 @@ function smallestMultiple(maxMultipler) {
          if (verbose) {
             console.log('smallestMultiple() -> counter:', counter);
          }
+         if (!isEven(startingMultiple)) {
+            if (verbose) {
+               console.log('smallestMultiple() ->', startingMultiple, 'is not an even number');
+               console.log('smallestMultiple() -> starting next iteration of outer for loop');
+            }
+            break;
+         }
          if (startingMultiple % counter !== 0) {
             if (verbose) {
                console.log('smallestMultiple() ->', startingMultiple, '%', counter, '!== 0');
@@ -105,12 +112,17 @@ function smallestMultiple(maxMultipler) {
 // console.log();
 
 /// testing
-console.log('*** findFactorial() Testing ***');
-console.log('\tcalling findFactorial() on 2, should return 2:', findFactorial(2));
-console.log('\tcalling findFactorial() on 3, should return 6:', findFactorial(3));
-console.log('\tcalling findFactorial() on 10, should return 3628800:', findFactorial(10));
+console.log('*** factorial() Testing ***');
+console.log('\tcalling findFactorial() on 2, should return 2:', factorial(2));
+console.log('\tcalling findFactorial() on 3, should return 6:', factorial(3));
+console.log('\tcalling findFactorial() on 10, should return 3628800:', factorial(10));
 console.log('*** smallestMultiple() Testing ***');
 console.log('\tcalling smallestMultiple() on 4, should return 12:', smallestMultiple(4));
 console.log('\tcalling smallestMultiple() on 5, should return 60:', smallestMultiple(5));
 console.log('\tcalling smallestMultiple() on 6, should return 60:', smallestMultiple(6));
 console.log('\tcalling smallestMultiple() on 10, should return 2520:', smallestMultiple(10));
+console.log('*** isEven() Testing ***');
+console.log('\tcalling isEven() on 4, should return true:',isEven(4));
+console.log('\tcalling isEven() on 24, should return true:',isEven(24));
+console.log('\tcalling isEven() on 171, should return false:',isEven(171));
+console.log('\tcalling isEven() on 69, should return false:',isEven(69));
