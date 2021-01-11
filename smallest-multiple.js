@@ -23,6 +23,14 @@ function factorial(number) {
    }
 }
 
+// Function checks to see if a number is even, returns true if it is
+function isEven(number) {
+   if (verbose) {
+      console.log('isEven() -> number:', number);
+   }
+   return number % 2 === 0;
+}
+
 /// same function found iteratively
 // Function finds the factorials of the provided number iteratively.
 // i.e. 4! = 4 * 3 * 2 * 1
