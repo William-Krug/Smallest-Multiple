@@ -92,6 +92,14 @@ function smallestMultiple(maxMultipler) {
             }
             break;
          }
+         if (startingMultiple > 5 && !multipleOfFive(startingMultiple)) {
+            if (verbose) {
+               console.log('smallestMultiple() ->', startingMultiple, 'is greater than 5');
+               console.log('smallestMultiple() ->', startingMultiple, 'is not a multiple of 5');
+               console.log('smallestMultiple() -> starting next iteration of outer for loop');
+            }
+            break;
+         }
          if (startingMultiple % counter !== 0) {
             if (verbose) {
                console.log('smallestMultiple() ->', startingMultiple, '%', counter, '!== 0');
@@ -134,3 +142,8 @@ console.log('\tcalling isEven() on 4, should return true:',isEven(4));
 console.log('\tcalling isEven() on 24, should return true:',isEven(24));
 console.log('\tcalling isEven() on 171, should return false:',isEven(171));
 console.log('\tcalling isEven() on 69, should return false:',isEven(69));
+console.log('*** multipleOfFive() Testing ***');
+console.log('\tcalling multipleOfFive() on 20, should return true:',multipleOfFive(20));
+console.log('\tcalling multipleOfFive() on 375, should return true:',multipleOfFive(375));
+console.log('\tcalling multipleOfFive() on 171, should return false:',multipleOfFive(171));
+console.log('\tcalling multipleOfFive() on 69, should return false:',multipleOfFive(69));
